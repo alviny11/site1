@@ -4,10 +4,10 @@ import sqlite3
 conn = sqlite3.connect('server.db')
 sql = conn.cursor()
 
-sql.execute('''CREATE TABLE if NOT exists (
-    login, TEXT
-    password, TEXT''')
-
+sql.execute("""CREATE TABLE IF NOT EXISTS users (
+    login TEXT,
+    password TEXT
+)""")
 conn.commit()
 
 app = Flask(__name__)
