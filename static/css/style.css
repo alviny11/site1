@@ -1,8 +1,8 @@
 .map {
     position: absolute;
-	width: 700px;
-	height: 700px;
-	top: 17vh; left: 33vw;
+	width: 65   vw;
+    height: 100vh;
+    top: 0vh; left: 20vw;
 	background-color: #333;
 }
 
@@ -20,4 +20,45 @@
 
 [class*="balloon__close-button"] {
 	opacity: 1;
+}
+#rect_r{
+    position: absolute;
+	width: 20vw;
+    height: 100vh;
+    top: 0vh; left: 0vw;
+    background: #FFCA86;
+}
+#rect_l{
+    position: absolute;
+	width: 20vw;
+    height: 100vh;
+    top: 0vh; left: 80vw;
+    background: #FFCA86;
+}
+.img {
+    text-align: center;
+    display: block;
+    height: 4vw;
+}
+
+.time {
+    text-align: center;
+    display: block;
+    font-size: 1vw;
+}
+
+.grad {
+    text-align: center;
+    display: block;
+    font-size: 2vw;
+}
+.weather {
+    position: absolute;
+    height: 35%;
+    bottom: 0;
+    right: 0;
+}
+.block {
+    margin-left: 1vh;
+     float:left;
 }
