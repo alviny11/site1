@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script>
+   function digitalClock() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+       //* добавление ведущих нулей */
+      if (hours < 10) hours = "0" + hours;
+      if (minutes < 10) minutes = "0" + minutes;
+      if (seconds < 10) seconds = "0" + seconds;
+        document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+        setTimeout("digitalClock()", 1000);
+   }
+  </script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +25,14 @@
 	<div id="map-test" class="map"></div>
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=7240ea03-95e6-44f3-a9c4-e4b336df23ec&lang=ru_RU">
 	</script>
-
-	<div id="rect_l"></div>
+    <div id="rect_l"></div>
     <div id="rect_r"></div>
+	    <div id="clock"></div>
+        <script>digitalClock();</script>
+<!--    <span id="clock"-->
+<!--        style="background-color: #2F4F4F; color: #00FF7F; border:4px outset #FFA500; padding:5px 20px;">-->
+<!--    </span>-->
+
 	<div class="weather">
         <div>
             <div>

@@ -9,7 +9,8 @@ ymaps.ready(function () {
   });
 
   let control = myMap.controls.get('routePanelControl');
-
+//  console.log(`Latitude : ${проспект Мира, 119с57}`);
+////  console.log(`Longitude: ${Останкинский район}`);
 
   control.routePanel.state.set({
     type: 'pedestrian',
@@ -35,7 +36,7 @@ var times = {
     '21': 'Вечером',
 };
 
-var api_key = '9349823a9ec7d3b2af496b4fa21cf505';
+    var api_key = '9349823a9ec7d3b2af496b4fa21cf505';
 var city = 'Moscow'
 var troitsk_id = '481608';
 var url = 'http://api.openweathermap.org/data/2.5/forecast?id=481608&lang=ru&units=metric&cnt=10&appid=9349823a9ec7d3b2af496b4fa21cf505&';
@@ -84,9 +85,5 @@ function update_weather() {
         grad_4.textContent = Math.round(time4.main.temp) + '°';
       });
 };
-
-
-
 update_weather();
-
 setInterval(update_weather, 1000 * 60);

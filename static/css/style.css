@@ -1,6 +1,6 @@
 .map {
     position: absolute;
-	width: 65   vw;
+	width: 65vw;
     height: 100vh;
     top: 0vh; left: 20vw;
 	background-color: #333;
@@ -61,4 +61,11 @@
 .block {
     margin-left: 1vh;
      float:left;
+}
+#clock{
+    position: absolute;
+    width: 10vw;
+    height: 2vh;
+
+    top: 5vh; left: 85vw;
 }
