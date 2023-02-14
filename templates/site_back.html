@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="static/css/style.css">
+    <script>
    function digitalClock() {
     var date = new Date();
     var hours = date.getHours();
@@ -15,16 +21,14 @@
         setTimeout("digitalClock()", 1000);
    }
   </script>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 	<div id="map-test" class="map"></div>
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=7240ea03-95e6-44f3-a9c4-e4b336df23ec&lang=ru_RU">
 	</script>
+    <input type="checkbox" id="nav-toggle" hidden>
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+    <div class="mask-content"></div>
     <div id="rect_l"></div>
     <div id="rect_r"></div>
 	    <div id="clock"></div>
@@ -32,7 +36,8 @@
 <!--    <span id="clock"-->
 <!--        style="background-color: #2F4F4F; color: #00FF7F; border:4px outset #FFA500; padding:5px 20px;">-->
 <!--    </span>-->
-
+    <nav class="nav">
+        <label for="nav-toggle" class="nav-toggle" onclick=""></label></nav>
 	<div class="weather">
         <div>
             <div>

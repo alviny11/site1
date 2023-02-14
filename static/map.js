@@ -1,5 +1,3 @@
-
-
 ymaps.ready(function () {
 
   let myMap = new ymaps.Map('map-test', {
