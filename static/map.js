@@ -7,22 +7,59 @@ ymaps.ready(function () {
   });
 
   let control = myMap.controls.get('routePanelControl');
-//  console.log(`Latitude : ${проспект Мира, 119с57}`);
-////  console.log(`Longitude: ${Останкинский район}`);
+  let city = 'Санкт-Петербург';
 
-  control.routePanel.state.set({
-    type: 'pedestrian',
-    })
-  control.routePanel.options.set({
+const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
+  function success(pos) {
+    const crd = pos.coords;
+
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+
+
+    let reverseGeocoder = ymaps.geocode([crd.latitude, crd.longitude]);
+    let locationText = null;
+    reverseGeocoder.then(function (res) {
+      locationText = res.geoObjects.get(0).properties.get('text')
+      console.log(locationText)
+
+      control.routePanel.state.set({
+        type: 'masstransit',
+        fromEnabled: false,
+        from: locationText,
+        toEnabled: true,
+        to: `${city}, Невский проспект 146`,
+      });
+    });
+
+    console.log(locationText)
+
+
+
+    control.routePanel.options.set({
       types: {
-        masstransit: false,
+        masstransit: true,
         pedestrian: true,
-        taxi: false
-        }
+        taxi: true
+      }
     })
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
 
 
 });
+
 var times = {
     '00': 'Ночью',
     '03': 'Ночью',
@@ -34,10 +71,10 @@ var times = {
     '21': 'Вечером',
 };
 
-    var api_key = '9349823a9ec7d3b2af496b4fa21cf505';
+    var api_key = '1ed1899498953b7fea33e63ddfdc8fc1';
 var city = 'Moscow'
 var troitsk_id = '481608';
-var url = 'http://api.openweathermap.org/data/2.5/forecast?id=481608&lang=ru&units=metric&cnt=10&appid=9349823a9ec7d3b2af496b4fa21cf505&';
+var url = 'http://api.openweathermap.org/data/2.5/forecast?id=481608&lang=ru&units=metric&cnt=10&appid=1ed1899498953b7fea33e63ddfdc8fc1&';
 function update_weather() {
         var t_1 = document.getElementById("time_1");
         var t_2 = document.getElementById("time_2");
