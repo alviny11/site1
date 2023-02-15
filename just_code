@@ -1,0 +1,18 @@
+https://qna.habr.com/q/279420
+.mobile-button {
+  border: medium none;
+  background-image: none;
+  background: transparent;
+  float: left;
+  background-color: transparent;
+}
+
+.mobile-button {
+  position: absolute;
+  width: 5vw;
+  height: 5vh;
+  top: 5; left: 5vw;
+  font-size: 70px;
+}
+<div class="container">
+    <button class="mobile-button">fjklf</button>
