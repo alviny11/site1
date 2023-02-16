@@ -1,19 +1,23 @@
+var myMap;
+
 ymaps.ready(function () {
 
-  let myMap = new ymaps.Map('map-test', {
+    myMap = new ymaps.Map('map-test', {
     center: [55.831388, 37.629277],
     zoom: 15,
     controls: ['routePanelControl']
   });
 
-  let control = myMap.controls.get('routePanelControl');
-  let city = 'Санкт-Петербург';
+  var control = myMap.controls.get('routePanelControl');
+  var city = 'Санкт-Петербург';
 
 const options = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0
   };
+
+
 
   function success(pos) {
     const crd = pos.coords;
@@ -33,7 +37,8 @@ const options = {
         fromEnabled: false,
         from: locationText,
         toEnabled: true,
-        to: `${city}, Невский проспект 146`,
+      to: `${city}, Невский проспект 146`,
+//        to: none,
       });
     });
 
@@ -43,9 +48,9 @@ const options = {
 
     control.routePanel.options.set({
       types: {
-        masstransit: true,
+        masstransit: false,
         pedestrian: true,
-        taxi: true
+        taxi: false
       }
     })
   }
@@ -54,11 +59,10 @@ const options = {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 
-  navigator.geolocation.getCurrentPosition(success, error, options);
 
-
-
+    navigator.geolocation.getCurrentPosition(success, error, options);
 });
+
 
 var times = {
     '00': 'Ночью',
@@ -122,3 +126,20 @@ function update_weather() {
 };
 update_weather();
 setInterval(update_weather, 1000 * 60);
+
+
+function marsh1() {
+
+    let city = 'Санкт-Петербург';
+    let control = myMap.controls.get('routePanelControl');
+      control.routePanel.state.set({
+        type: 'masstransit',
+        fromEnabled: true,
+        from: `${city}, Невский проспект 140`,
+        toEnabled: true,
+        to: `${city}, Невский проспект 146`,
+      });
+
+    console.log(locationText)
+  }
+
