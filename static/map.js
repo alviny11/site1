@@ -140,6 +140,5 @@ function marsh1() {
         to: `${city}, Невский проспект 146`,
       });
 
-    console.log(locationText)
   }
 

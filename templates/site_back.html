@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <link rel="stylesheet" href="/assets/css/flipclock.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,16 +23,18 @@
   </script>
 </head>
 <body>
-	<div id="map-test" class="map"></div>
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=dbc25711-385e-4dfa-835e-f3b9cf41c5a7&lang=ru_RU">
+
+	<div id="map-test" class="map">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=dbc25711-385e-4dfa-835e-f3b9cf41c5a7&lang=ru_RU">
 	</script>
+    </div>
+
     <input type="checkbox" id="nav-toggle" hidden>
         <label for="nav-toggle" class="nav-toggle" onclick></label>
     <div class="mask-content"></div>
-    <div id="rect_l"></div>
-    <div id="rect_r"></div>
-	    <div id="clock"></div>
-        <script>digitalClock();</script>
+
+    <div id="clock"></div>
+    <script>digitalClock();</script>
 <!--    <span id="clock"-->
 <!--        style="background-color: #2F4F4F; color: #00FF7F; border:4px outset #FFA500; padding:5px 20px;">-->
 <!--    </span>-->
@@ -65,17 +67,24 @@
         </div>
 
     </div>
-
-<!--    <div class="container"></div>-->
     <button id="mobile-button" onclick="marsh1()" >button</button>
     <script src="static/map.js"></script>
+    <div id="data"> <script  language="javascript" type="text/javascript"  ><!--
 
-<!--    <script type="text/javascript">-->
-<!--    marsh1 = document.createElement("Button");-->
-<!--    marsh1.id = 'mobile-button';-->
+        var d = new Date();
 
-<!--    marsh1.textContent='marsh1'-->
-<!--    document.body.appendChild(marsh1);-->
-<!--    </script>-->
+        var day=new Array("Воскресенье","Понедельник","Вторник",
+        "Среда","Четверг","Пятница","Суббота");
+
+        var month=new Array("января","февраля","марта","апреля","мая","июня",
+        "июля","августа","сентября","октября","ноября","декабря");
+
+        document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]);
+
+    //--></script></div>
+
+<!--    <div id="data1"></div>-->
+<!--        <script>data();</script>-->
+
 </body>
 </html>

@@ -1,8 +1,12 @@
+body{
+    background-color: #FFCA86
+}
+
 .map {
     position: absolute;
-	width: 65vw;
+	width: 60vw;
     height: 100vh;
-    top: 0; left: 19vw;
+    top: 0; left: 20vw;
     background-color: #333;
 }
 
@@ -21,24 +25,10 @@
 [class*="balloon__close-button"] {
 	opacity: 1;
 }
-#rect_r{
-    position: absolute;
-	width: 20vw;
-    height: 100vh;
-    top: 0vh; left: 0vw;
-    background: none;
-}
-#rect_l{
-    position: absolute;
-	width: 20vw;
-    height: 100vh;
-    top: 0vh; left: 80vw;
-    background: #FFCA86;
-}
 .img {
     text-align: center;
     display: block;
-    height: 4vw;
+    height: 3vw;
 }
 
 .time {
@@ -54,7 +44,8 @@
 }
 .weather {
     position: absolute;
-    height: 35%;
+    height: 30%;
+    width: 20%;
     bottom: 0;
     right: 0;
 }
@@ -62,18 +53,6 @@
     margin-left: 1vh;
      float:left;
 }
-#clock{
-    position: absolute;
-    width: 10vw;
-    height: 2vh;
-
-    top: 5vh; left: 85vw;
-}
-/**
- * Переключаемая боковая панель навигации
- * выдвигающаяся по клику слева
- */
-
 .nav {
     /*  ширна произвольная, не стесняйтесь экспериментировать */
     width: 320px;
@@ -473,4 +452,19 @@ body {
   height: 5vh;
   top: 5; left: 5vw;
   font-size: 50px;
+}
+
+#data{
+  position: absolute;
+  width: 20vw;
+  height: 10vh;
+  top: 40vh; right: 0;
+  font-size: 2vh;
+}
+#clock{
+  position: absolute;
+  width: 20vw;
+  height: 10vh;
+  top: 15vh; right: 0;
+  font-size: 2vh;
 }
