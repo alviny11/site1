@@ -9,7 +9,7 @@ ymaps.ready(function () {
   });
 
   var control = myMap.controls.get('routePanelControl');
-  var city = 'Санкт-Петербург';
+  var city = 'Москва';
 
 const options = {
     enableHighAccuracy: true,
@@ -34,10 +34,10 @@ const options = {
 
       control.routePanel.state.set({
         type: 'masstransit',
-        fromEnabled: false,
-        from: locationText,
+        fromEnabled: true,
+        from: none,
         toEnabled: true,
-      to: `${city}, Невский проспект 146`,
+      to: none,
 //        to: none,
       });
     });
@@ -130,15 +130,28 @@ setInterval(update_weather, 1000 * 60);
 
 function marsh1() {
 
-    let city = 'Санкт-Петербург';
+    let city = 'Москва';
     let control = myMap.controls.get('routePanelControl');
       control.routePanel.state.set({
         type: 'masstransit',
         fromEnabled: true,
-        from: `${city}, Невский проспект 140`,
+        from: `${city}, Москва, Калужско-Рижская линия, метро ВДНХ`,
         toEnabled: true,
-        to: `${city}, Невский проспект 146`,
+        to: `${city}, проспект Мира, 111`,
       });
 
   }
 
+function marsh2() {
+
+    let city = 'Москва';
+    let control = myMap.controls.get('routePanelControl');
+      control.routePanel.state.set({
+        type: 'masstransit',
+        fromEnabled: true,
+        from: `${city}, Москва, Калужско-Рижская линия, метро ВДНХ`,
+        toEnabled: true,
+        to: `${city}, Москва, Космопарк`,
+      });
+
+  }

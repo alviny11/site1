@@ -438,33 +438,38 @@ body {
     -webkit-transition: opacity .5s, visibility .5s;
     transition: opacity .5s, visibility .5s;
 }
-#mobile-button {
-  border: medium none;
-  background-image: none;
-  background: transparent;
-  float: left;
-  background-color: transparent;
-}
-
-#mobile-button{
-  position: absolute;
-  width: 5vw;
-  height: 5vh;
-  top: 5; left: 5vw;
-  font-size: 50px;
+.mobile-button {
+  background-color:#FFCA86; /* Зеленый фон */
+  border: 1px solid #FFCA86; /* Зеленый border */
+  color: white; /* Белый текст */
+  padding: 0px 0px; /* Немного отступа */
+  cursor: pointer; /* Указатель/значок руки */
+  width: 45%; /* Установите ширину, если это необходимо */
+  display: block; /* Сделайте так, чтобы кнопки располагались друг под другом */
 }
 
 #data{
   position: absolute;
   width: 20vw;
-  height: 10vh;
-  top: 40vh; right: 0;
+  height: 33vh;
+  top: 33%; right: 0;
   font-size: 2vh;
+  text-align: center;
 }
 #clock{
   position: absolute;
   width: 20vw;
-  height: 10vh;
-  top: 15vh; right: 0;
+  height: 33vh;
+  top: 0; right: 0;
   font-size: 2vh;
+  text-align: center;
+}
+.weather {
+    position: absolute;
+    top:66%;
+    height: 34%;
+    width: 20%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
 }
